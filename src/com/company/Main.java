@@ -41,22 +41,17 @@ public class Main {
         moketojai[11] = moketojas12;
 
         double internetas = 0;
-        double sildymas = 0;
         double telefonas = 0;
 
         for(MoketojasImpl moketojas : moketojai){
             if(moketojas instanceof TelefonasImpl){
                 telefonas += moketojas.getSuma();
             }
-            else if(moketojas instanceof  SildymasImpl){
-                sildymas += moketojas.getSuma();
-            }
             else if(moketojas instanceof InternetasImpl){
                 internetas += moketojas.getSuma();
             }
         }
         System.out.println("Internetas: " + internetas);
-        System.out.println("Sildymas: " + sildymas);
         System.out.println("Telefonas " + telefonas);
     }
 }
