@@ -21,11 +21,6 @@ public class MoketojasImpl implements Moketojas{
     }
 
     @Override
-    public void setMoketojoKodas(int moketojoKodas) {
-        this.moketojoKodas = moketojoKodas;
-    }
-
-    @Override
     public String getVardas() {
         return this.vardas;
     }

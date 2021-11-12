@@ -1,10 +1,8 @@
 package com.company;
 
 import com.company.moketojas.MoketojasImpl;
-import com.company.moketojas.internetas.Internetas;
 import com.company.moketojas.internetas.InternetasImpl;
 import com.company.moketojas.sildymas.SildymasImpl;
-import com.company.moketojas.telefonas.Telefonas;
 import com.company.moketojas.telefonas.TelefonasImpl;
 
 public class Main {
@@ -14,9 +12,9 @@ public class Main {
         MoketojasImpl moketojas2 = new MoketojasImpl(512646, "Voldemaras", "Kazlauskas", "Girios g. 6", 41.10);
         MoketojasImpl moketojas3 = new MoketojasImpl(645654, "Voldemaras", "Kazlauskas", "Girios g. 6", 985.40);
 
-        TelefonasImpl moketojas4 = new TelefonasImpl(68465,"Voldemaras", "Kazlauskas", "Girios g. 6", 215.01, 869512448);
-        TelefonasImpl moketojas5 = new TelefonasImpl(23135,"Voldemaras", "Kazlauskas", "Girios g. 6", 9554.99, 864432615);
-        TelefonasImpl moketojas6 = new TelefonasImpl(6518998,"Voldemaras", "Kazlauskas", "Girios g. 6", 8541.10, 869954782);
+        TelefonasImpl moketojas4 = new TelefonasImpl(68465, "Voldemaras", "Kazlauskas", "Girios g. 6", 215.01, 869512448);
+        TelefonasImpl moketojas5 = new TelefonasImpl(23135, "Voldemaras", "Kazlauskas", "Girios g. 6", 9554.99, 864432615);
+        TelefonasImpl moketojas6 = new TelefonasImpl(6518998, "Voldemaras", "Kazlauskas", "Girios g. 6", 8541.10, 869954782);
 
         SildymasImpl moketojas7 = new SildymasImpl(65451, "Voldemaras", "Kazlauskas", "Girios g. 6", 3655.48, 80);
         SildymasImpl moketojas8 = new SildymasImpl(656548, "Voldemaras", "Kazlauskas", "Girios g. 6", 9558.74, 55);
@@ -24,8 +22,8 @@ public class Main {
 
         InternetasImpl moketojas10 = new InternetasImpl(894654, "Voldemaras", "Kazlauskas", "Girios g. 6", 666.20, "145.88.45.125");
         InternetasImpl moketojas11 = new InternetasImpl(6456448, "Voldemaras", "Kazlauskas", "Girios g. 6", 845, "245.55.84.146");
-        InternetasImpl moketojas12 = new InternetasImpl(5645684,"Voldemaras", "Kazlauskas", "Girios g. 6", 654, "155.244.155.5");
-
+        InternetasImpl moketojas12 = new InternetasImpl(5645684, "Voldemaras", "Kazlauskas", "Girios g. 6", 654, "155.244.155.5");
+        //sukeliami moketojai į list
         MoketojasImpl[] moketojai = new MoketojasImpl[12];
         moketojai[0] = moketojas1;
         moketojai[1] = moketojas2;
@@ -42,16 +40,18 @@ public class Main {
 
         double internetas = 0;
         double telefonas = 0;
-
-        for(MoketojasImpl moketojas : moketojai){
-            if(moketojas instanceof TelefonasImpl){
+        //suskaičiuojamos elektros ir telefono sumos
+        for (MoketojasImpl moketojas : moketojai) {
+            if (moketojas instanceof TelefonasImpl) {
                 telefonas += moketojas.getSuma();
-            }
-            else if(moketojas instanceof InternetasImpl){
+            } else if (moketojas instanceof InternetasImpl) {
                 internetas += moketojas.getSuma();
             }
         }
+        //išvedamos sumos
         System.out.println("Internetas: " + internetas);
         System.out.println("Telefonas " + telefonas);
+        System.out.print("Bendra suma: ");
+        System.out.println(telefonas + internetas);
     }
 }

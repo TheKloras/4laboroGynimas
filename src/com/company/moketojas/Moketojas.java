@@ -2,7 +2,6 @@ package com.company.moketojas;
 
 public interface Moketojas {
     int getMoketojoKodas();
-    void setMoketojoKodas(int moketojoKodas);
     String getVardas();
     void setVardas(String vardas);
     String getPavarde();
